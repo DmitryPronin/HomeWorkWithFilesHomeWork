@@ -55,10 +55,10 @@ public class WorkWithFileTest {
                 .as("Field must be \"Фамилия\"").isEqualTo("Фамилия");
     }
 
-    @DisplayName("Проверка файла в WinZip формате")
+    @DisplayName("Проверка файлов файла в WinZip формате")
     @Test
     void checkWinZipFile() throws Exception {
-        ZipFile zipFile = new ZipFile(new File("/Users/dmitriypronin/Documents/QA/QAGURU/HomeWorkWithFilesHomeWork/src/test/resources/files/Untitled.zip"));
+        ZipFile zipFile = new ZipFile(new File("src/test/resources/files/Untitled.zip"));
         try (InputStream stream = cl.getResourceAsStream("files/Untitled.zip");
              ZipInputStream zis = new ZipInputStream(stream)) {
             ZipEntry zipEntry;
