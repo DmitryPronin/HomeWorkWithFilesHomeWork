@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URISyntaxException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
@@ -58,8 +57,8 @@ public class WorkWithFileTest {
     @DisplayName("Проверка файлов файла в WinZip формате")
     @Test
     void checkWinZipFile() throws Exception {
-        ZipFile zipFile = new ZipFile(new File("src/test/resources/files/Untitled.zip"));
-        try (InputStream stream = cl.getResourceAsStream("files/Untitled.zip");
+        ZipFile zipFile = new ZipFile(new File("src/test/resources/files/ZipFiles.zip"));
+        try (InputStream stream = cl.getResourceAsStream("files/ZipFiles.zip");
              ZipInputStream zis = new ZipInputStream(stream)) {
             ZipEntry zipEntry;
             while ((zipEntry = zis.getNextEntry()) != null) {
